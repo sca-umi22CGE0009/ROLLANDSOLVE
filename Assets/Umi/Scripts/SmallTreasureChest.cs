@@ -28,6 +28,8 @@ public class SmallTreasureChest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //プレイヤーが宝箱に触ったらプレイヤーの速度を0にし
+        //アニメーション開始
         if (isTouch)
         {
             playerController.speed = 0;

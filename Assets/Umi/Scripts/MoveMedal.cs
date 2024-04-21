@@ -43,21 +43,22 @@ public class MoveMedal : MonoBehaviour
     {
         transform.localScale = new Vector2(medalSize, medalSize);
         effect.transform.localScale = transform.localScale;
-        //img.color += new Color(0, 0, 0, alpha);
 
+        //上方向にメダルが拡大しながら移動する
         if (!tCheck)
         {
             medalSize += moveSpeed * Time.unscaledDeltaTime;
+            //stopMedalSize以下だったら
             if (transform.localScale.x <= stopMedalSize)
             {
                 Vector2 pos = new Vector2(0, medalSpeedY) * Time.unscaledDeltaTime;
                 transform.Translate(pos);
             }
-            else if(transform.localScale.x >= stopMedalSize)
+            //stopMedalSize以上だったら
+            else if (transform.localScale.x >= stopMedalSize)
             {
                 coolTime -= Time.unscaledDeltaTime;
                 moveSpeed = 0;
-                //alpha += fadeTime * Time.unscaledDeltaTime;
 
                 if (coolTime <= 0)
                 {
@@ -65,13 +66,12 @@ public class MoveMedal : MonoBehaviour
                 }
             }
         }
-
+        //プレイヤーに向かってメダルが縮小する
         if (tCheck)
         {
             Vector3 targeting = (player.transform.position - this.transform.position).normalized;
             transform.Translate(targeting * medalSpeedX * Time.unscaledDeltaTime);
 
-            //LiteImage.gameObject.SetActive(false);
             //縮小する
             moveSpeed = sizeSpeed;
             medalSize -= moveSpeed * Time.unscaledDeltaTime;
@@ -83,18 +83,13 @@ public class MoveMedal : MonoBehaviour
             }
         }
     }
+
+    //メダルが0より小さくなったらかつ
+    //Stage3だったらClearシーンに遷移
     private IEnumerator WaitTime()
     {
         yield return new WaitForSecondsRealtime(SceneChangeTime);
         SceneManager.LoadScene("SelectScene");
-        //if (SceneManager.GetActiveScene().name == "Stage1")
-        //{
-        //    SceneManager.LoadScene("Stage2");
-        //}
-        //if (SceneManager.GetActiveScene().name == "Stage2")
-        //{
-        //    SceneManager.LoadScene("Stage3");
-        //}
         if (SceneManager.GetActiveScene().name == "Stage3")
         {
             SceneManager.LoadScene("Clear");

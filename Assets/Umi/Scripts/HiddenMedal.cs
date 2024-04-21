@@ -20,17 +20,7 @@ public class HiddenMedal : MonoBehaviour
 
     void Update()
     {
-        //Debug.DrawRay(origin, dir,UnityEngine.Color.red, 100f, true);
-        //Vector2 pos = new Vector2(0, posY) * Time.deltaTime;
-        //transform.Translate(pos);
-        //if (posY < 0)
-        //{
-        //    posY += 0.1f;
-        //}
-        //if (posY >= 1)
-        //{
-        //    posY -= 0.1f;
-        //}
+        //”ñ•\Ž¦‚É‚·‚é
         if (touchCheck)
         {
             gameObject.SetActive(false);

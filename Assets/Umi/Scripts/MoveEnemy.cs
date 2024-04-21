@@ -33,12 +33,14 @@ public class MoveEnemy : MonoBehaviour
         transform.Translate(pos);
         onPlayerRange();
 
+        //右斜め上に飛んでいく
         if (DamegeCheck)
         {
             Vector2 dPos = new Vector2(desSpeed, desSpeed) * Time.deltaTime;
             transform.Translate(dPos);
         }
     }
+
     //プレイヤーの判定
     private void onPlayerRange()
     {
@@ -78,6 +80,7 @@ public class MoveEnemy : MonoBehaviour
         }
     }
 
+    //ダメージを受けたら
     public void BlowAway()
     {
         DamegeCheck = true;

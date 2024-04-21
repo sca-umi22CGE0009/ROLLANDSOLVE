@@ -25,12 +25,8 @@ public class ThornBall : MonoBehaviour
         transform.Rotate(0, 0, rotaSpeed * Time.deltaTime);
         Vector2 pos = new Vector2(-enemySpeed, 0) * Time.deltaTime;
         transform.Translate(pos,Space.World);
-
-        if (enemySpeed <= 0)
-        {
-            //Debug.Log("-");
-        }
     }
+    //•Ç‚ÉG‚ê‚½‚ç
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -38,7 +34,7 @@ public class ThornBall : MonoBehaviour
             StartCoroutine(MoveStop());
         }
     }
-
+    //“®‚«‚ðŽ~‚ß‚é
     private IEnumerator MoveStop()
     {
         float e = enemySpeed;
@@ -51,14 +47,4 @@ public class ThornBall : MonoBehaviour
         enemySpeed *= -1.0f;
         rotaSpeed *= -1.0f;
     }
-
-    ////Renderer‚ª”CˆÓ‚ÌƒJƒƒ‰‚©‚çŒ©‚¦‚é‚ÆŒÄ‚Ño‚³‚ê‚é
-    //private void OnBecameVisible()
-    //{
-    //    isVisible = true;
-    //}
-    //private void OnBecameInvisible()
-    //{
-    //    isVisible = false;
-    //}
 }

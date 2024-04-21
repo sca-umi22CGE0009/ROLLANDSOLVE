@@ -60,7 +60,7 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene("Stage3");
         }
     }
-
+    //Clear‚µ‚½‚çƒf[ƒ^‚ğÁ‚·
     public void OnAnimEnd()
     {
         if (SceneManager.GetActiveScene().name == "Clear")
@@ -69,6 +69,7 @@ public class SceneChanger : MonoBehaviour
             PlayerPrefs.DeleteAll();
         }
     }
+    //TitleScene‚É‘JˆÚ
     IEnumerator SceneChange()
     {
         yield return new WaitForSeconds(changeTime);

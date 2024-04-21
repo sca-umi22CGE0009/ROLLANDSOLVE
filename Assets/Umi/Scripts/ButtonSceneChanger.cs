@@ -93,29 +93,7 @@ public class ButtonSceneChanger : MonoBehaviour
             countImage[2].gameObject.SetActive(false);
         }
     }
-    //private IEnumerator CountDown()
-    //{
-    //    //あとで直す
-    //    countImage[0].gameObject.SetActive(true);
-    //    yield return new WaitForSecondsRealtime(time);
-    //    countImage[0].gameObject.SetActive(false);
-    //    countImage[1].gameObject.SetActive(true);
-    //    yield return new WaitForSecondsRealtime(time);
-    //    countImage[1].gameObject.SetActive(false);
-    //    countImage[2].gameObject.SetActive(true);
-    //    yield return new WaitForSecondsRealtime(time);
-    //    countImage[2].gameObject.SetActive(false);
-    //    yield return new WaitForSecondsRealtime(time);
 
-    //    //for (int i = 0; i < countImage.Length - 1; i++)
-    //    //{
-    //    //    countImage[i].gameObject.SetActive(true);
-    //    //    yield return new WaitForSecondsRealtime(time);
-    //    //    countImage[i].gameObject.SetActive(false);
-    //    //    Debug.Log(i);
-    //    //}
-    //}
-    //カウントダウンが0になったら
     private IEnumerator StartCount()
     {
         countImage[3].gameObject.SetActive(true);
